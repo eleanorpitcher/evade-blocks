@@ -1,14 +1,15 @@
 class Game {
     constructor(){
         this.player = null;
-        this.obstacles = [] //we will have multiple obstacles so we can call it as an array
+        this.obstacles = [] //we will have multiple obstacles so we can call it as an array, we will iterate through the array and every 60ms we act on an object in the array
     }
 
     start(){
         this.player = new Player() //creates an instance of the player
         this.attachEventListeners()
-        const obstacle = new Obstacle()
-        this.obstacle.push(obstacle)
+        this.createObstacles()
+        this.moveObstacles()
+
     }
 
     attachEventListeners(){
@@ -21,6 +22,22 @@ class Game {
                 this.player.moveRight()
             }
         })
+    }
+
+    moveObstacles(){ //we want the obstacles to move on their own
+        setInterval(() => {
+            this.obstacles.forEach((obstacle) => {
+                obstacle.moveDown()
+            })
+        }, 60)
+    }
+
+    createObstacles(){
+        setInterval(() => {
+            const obstacle = new Obstacle()
+            this.obstacles.push(obstacle)
+
+        }, 1000)
     }
 }
 
@@ -56,7 +73,7 @@ class Player{ //creating properties to be used in the createPlayer method. This 
 
     moveLeft(){
         this.positionX -= 1 // if you minus numbers then the player moves more to the left
-        this.domElement.style.left = `${this.positionX}vw`
+        this.domElement.style.left = `${this.positionX}vw` //updates the visual information that we have to the new position, it updates the value of the variable
     }
 }
 
@@ -80,8 +97,12 @@ class Obstacle {
 
         const board = document.getElementById('board')
         board.appendChild(obstacleDOM)
-
         return obstacleDOM
+    }
+
+    moveDown(){
+        this.positionY -= 1 //moves the div down
+        this.domElement.style.bottom = `${this.positionY}vh`
     }
 }
 

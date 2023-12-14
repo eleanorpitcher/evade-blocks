@@ -10,26 +10,26 @@
 
 ## Steps for MVP
 
-1. Logic for starting game
-2. Creating main character
-3. How does the main character move?
-4. What makes the animation look the way it does? (setInterval() or requestAnimationFrame())
-5. Obstacle behaviour
-6. Collision
-7. Logic for losing or winning
+[x] Logic for starting game
+[x] Creating main character
+[x] How does the main character move?
+[x] What makes the animation look the way it does? (setInterval() or requestAnimationFrame())
+[x] Obstacle behaviour
+[] Collision
+[] Logic for losing or winning
 
 A playable game, that has an objective for the user, and a win/lose outcome.
 
 ## Plan
 
-1. Create the game board (full screen, mobile, etc.)
-2. Make the player appear on the screen
-3. Create the logic for the player to move
-4. Make the player move with arrow keys
-5. Create an obstacle
-6. Move the obstacle
-7. Create multiple obstacles?
-8. Create the collision logic
-9. Possible extra: Making objects appear randomly
-10. Possible extra: Limit player movement to the play screen
-11. Possible extra: Change player from block to an image
+[x] Create the game board (full screen, mobile, etc.)
+[x] Make the player appear on the screen
+[x] Create the logic for the player to move
+[x] Make the player move with arrow keys
+[x] Create an obstacle
+[x] Move the obstacle
+[] Create multiple obstacles?
+[] Create the collision logic
+[] Possible extra: Making objects appear randomly
+[] Possible extra: Limit player movement to the play screen
+[] Possible extra: Change player from block to an image

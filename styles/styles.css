@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 /*your browser will have its own styling for margins thats why you normally see the spacing between your elements and the edge of the screen. We are now reseting those values*/
