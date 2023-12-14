@@ -3,8 +3,16 @@ html, body {
     padding: 0;
 }
 
+/*your browser will have its own styling for margins thats why you normally see the spacing between your elements and the edge of the screen. We are now reseting those values*/
+
 #board {
     background-color: bisque;
     min-height: 100vh;
     min-width: 100vw;
+}
+
+#player {
+    background-color: pink;
+    position: absolute; /*easier to control our player with the JS*/
+    
 }
