@@ -23,13 +23,24 @@ class Player{ //creating properties to be used in the createPlayer method
         nodeDOM.id = 'player' //gives the player an ID
         nodeDOM.style = `${this.width}vw`
         nodeDOM.style.height = `${this.height}vh`
-        nodeDOM.style.bottom = this.positionY + `vh`
+        nodeDOM.style.bottom = this.positionY + `vh` //vh is the viewer height, the vertical space of our screen, it doesn't count the elements of browser
         nodeDOM.style.left = `${this.positionX}vw`
 
         
         const board = document.getElementById('board')
         board.appendChild(nodeDOM) //this should create our player
+        console.log(nodeDOM.getBoundingClientRect()) // gives us a list of properties, helps us with collisions
         return nodeDOM
+    }
+
+    moveRight(){ //repaint player on screen, we are moving AWAY from the left
+        this.positionX += 1 //you can also use ++ to move right
+        this.domElement.style.left = this.positionX 'vw' //this is how we repaint player on the screen. We need to access the reference to my div which is saved in my DOM element. what is stored in domELement is the actual div that IS my player. so anytime we change this.domElement css we are changing the appearance of my player
+    }
+
+    moveLeft(){
+        this.positionX -= 1
+        this.domElement.style.left = this.positionX 'vw'
     }
 }
 
