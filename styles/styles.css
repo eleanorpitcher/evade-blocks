@@ -14,5 +14,10 @@ html, body {
 #player {
     background-color: pink;
     position: absolute; /*easier to control our player with the JS*/
-    
+
+}
+
+.obstacles {
+    background-color: red;
+    position: absolute;
 }

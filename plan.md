@@ -1,12 +1,12 @@
 ## Steps for plan
 
-1. Decide the game
-2. Plan your project (what images do you need)
-3. Define MVP (minimal viable product/project) - that will be defined by the requirements
-4. Define what the extras are and how to prioritise them
-5. Create the folder structure
-6. Create the files
-7. Start coding
+[x] Decide the game
+[x] Plan your project (what images do you need)
+[x] Define MVP (minimal viable product/project) - that will be defined by the requirements
+[x] Define what the extras are and how to prioritise them
+[x] Create the folder structure
+[x] Create the files
+[x] Start coding
 
 ## Steps for MVP
 

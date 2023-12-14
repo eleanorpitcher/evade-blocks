@@ -1,20 +1,23 @@
 class Game {
     constructor(){
         this.player = null;
+        this.obstacles = [] //we will have multiple obstacles so we can call it as an array
     }
 
     start(){
         this.player = new Player() //creates an instance of the player
-        this.attachEventListeners() 
+        this.attachEventListeners()
+        const obstacle = new Obstacle()
+        this.obstacle.push(obstacle)
     }
 
     attachEventListeners(){
         window.addEventListener('keydown', (event) => { //this means that when you press the down button, the event will be console logged
-            console.log(event.key) //this is a kind of object, so it will log the type of action, telling us what the user is doing
+            // console.log(event.key) //this is a kind of object, so it will log the type of action, telling us what the user is doing
             const input = event.key // this will tell us what the player is doing
-            if (input === "ArrowLeft"){ //checking which key the user is clicking
+            if (input == "ArrowLeft"){ //checking which key the user is clicking
                 this.player.moveLeft()
-            } else if(input === "ArrowRight"){
+            } else if (input == "ArrowRight"){
                 this.player.moveRight()
             }
         })
@@ -48,16 +51,39 @@ class Player{ //creating properties to be used in the createPlayer method. This 
 
     moveRight(){ //repaint player on screen, we are moving AWAY from the left
         this.positionX += 1 //you can also use ++ to move right. If we add numbers to the left, it moves to the right, and vice versa. Same with bottom, if we add to the bottom it goes up (but that's not relevant for now)
-        this.domElement.style.left = `${this.positionX} vw` //this is how we repaint player on the screen. We need to access the reference to my div which is saved in my DOM element. what is stored in domELement is the actual div that IS my player. so anytime we change this.domElement css we are changing the appearance of my player
+        this.domElement.style.left = `${this.positionX}vw` //this is how we repaint player on the screen. We need to access the reference to my div which is saved in my DOM element. what is stored in domELement is the actual div that IS my player. so anytime we change this.domElement css we are changing the appearance of my player
     }
 
     moveLeft(){
         this.positionX -= 1 // if you minus numbers then the player moves more to the left
-        this.domElement.style.left = `${this.positionX} vw`
+        this.domElement.style.left = `${this.positionX}vw`
     }
 }
 
-// class Obstacle {}
+class Obstacle {
+    constructor(){
+        this.width = 10;
+        this.height = 5; //creating an obstacle that is the same size as the player
+        this.positionX = 50;
+        this.positionY = 95; //this is so the obstacle starts at the top of the screen
+
+        this.domElement = this.createElement();
+    }
+
+    createElement() {
+        const obstacleDOM = document.createElement('div') //creating a div and saving it in obstacleDOM
+        obstacleDOM.className = 'obstacles' //we need to use a class name instead of an ID because we will have multiple obstacles
+        obstacleDOM.style.width = `${this.width}vw`
+        obstacleDOM.style.height = `${this.height}vh`
+        obstacleDOM.style.left = `${this.positionX}vw`
+        obstacleDOM.style.bottom = `${this.positionY}vh`
+
+        const board = document.getElementById('board')
+        board.appendChild(obstacleDOM)
+
+        return obstacleDOM
+    }
+}
 
 
 const game = new Game()
