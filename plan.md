@@ -10,13 +10,13 @@
 
 ## Steps for MVP
 
-[x] Logic for starting game
-[x] Creating main character
-[x] How does the main character move?
-[x] What makes the animation look the way it does? (setInterval() or requestAnimationFrame())
-[x] Obstacle behaviour
-[] Collision
-[] Logic for losing or winning
+1. Logic for starting game
+2. Creating main character
+3. How does the main character move?
+4. What makes the animation look the way it does? (setInterval() or requestAnimationFrame())
+5. Obstacle behaviour
+6. Collision
+7. Logic for losing or winning
 
 A playable game, that has an objective for the user, and a win/lose outcome.
 
